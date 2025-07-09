@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Hafi Dimas R. P. - Portofolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Kustom Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#111111',
+                        'dark-card': '#1A1A1A',
+                        'brand-red': '#E50914',
+                        'brand-red-dark': '#B20710',
+                        'light-text': '#F5F5F1',
+                        'dark-text': '#A3A3A3',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Style untuk scrollbar (opsional, untuk estetika) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E50914;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B20710;
+        }
+            header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ff4c60;
+      margin-bottom: 1rem;
+    }
+    .hero-content h1 {
+      color: #ff4c60;
+      font-size: 2.5rem;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      scroll-margin-top: 100px;
+    }
+
+    .section h2 {
+      color: #ff4c60;
+      margin-bottom: 2rem;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      background-color: #191945;
+      border-radius: 10px;
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    .about-container img {
+      width: 250px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .info-box {
+      background-color: #2a2a55;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .info-grid p { margin: 0; }
+
+    .download-btn {
+      display: inline-block;
+      background: #ff4c60;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 1.5rem;
+    }
+
+    .skills, .projects, .certificates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: #171717;
+      border: 1px solid #202021;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    form input, form textarea {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    form button {
+      background: #ff4c60;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      background: #151538;
+      color: white;
+      padding: 1.5rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #ff4c60;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: none;
+      z-index: 999;
+    }
+.skills .card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills .card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+    </style>
+</head>
+<body class="bg-dark-bg font-poppins text-light-text">
+
+    <!-- Header / Navbar -->
+    <header id="home" class="fixed top-0 left-0 right-0 z-50 bg-dark-bg bg-opacity-80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-brand-red uppercase">Hafi</a>
+            
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:flex space-x-8 text-sm items-center">
+                <a href="#home" class="hover:text-brand-red transition duration-300">HOME</a>
+                <a href="#about" class="hover:text-brand-red transition duration-300">TENTANG SAYA</a>
+                <a href="#experience" class="hover:text-brand-red transition duration-300">PENGALAMAN</a>
+                <a href="#projects" class="hover:text-brand-red transition duration-300">PROYEK</a>
+                <a href="#certificates" class="hover:text-brand-red transition duration-300">SERTIFIKAT</a>
+                <a href="#contact" class="hover:text-brand-red transition duration-300">KONTAK</a>
+            </nav>
+
+            <!-- Tombol Hamburger (Mobile) -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Navigasi Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card">
+            <a href="#home" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">HOME</a>
+            <a href="#about" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">TENTANG SAYA</a>
+            <a href="#experience" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">PENGALAMAN</a>
+            <a href="#projects" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">PROYEK</a>
+            <a href="#certificates" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">SERTIFIKAT</a>
+            <a href="#contact" class="block text-center py-3 px-6 hover:bg-brand-red transition duration-300">KONTAK</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center pt-24 md:pt-0">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Teks Hero -->
+                <div class="space-y-4 text-center md:text-left">
+                    <p class="text-xl text-dark-text">Halo, Nama Saya</p>
+                    <h1 class="text-4xl md:text-6xl font-bold">MOHAMAD HAFI DIMAS R.P.</h1>
+                    <p class="text-lg text-dark-text">Mahasiswa Teknik Informatika yang bersemangat tentang teknologi, desain, dan inovasi. Memiliki kemampuan public speaking, adaptif, dan pembelajar cepat.</p>
+                    <a href="CV M. Hafi Dimas.pdf" class="inline-block bg-brand-red hover:bg-brand-red-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        Lihat CV
+                    </a>
+                </div>
+                <!-- Gambar Hero -->
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute w-4/5 h-4/5 bg-brand-red rounded-2xl transform -rotate-6"></div>
+                    <img src="foto_porto.jpg" alt="Foto Profil Mohamad Hafi" class="relative z-10 rounded-2xl w-full max-w-sm shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="text-center mb-12">
+                <p class="text-sm text-brand-red font-semibold">Tentang Saya</p>
+                <h2 class="text-4xl font-bold">Siapakah Saya?</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                 <!-- Gambar About -->
+                <div class="relative flex justify-center items-center">
+                     <div class="absolute w-4/5 h-4/5 bg-brand-red/20 rounded-2xl transform rotate-6"></div>
+                    <img src="foto_porto2.jpg" alt="Foto sedang bekerja" class="relative z-10 rounded-2xl w-full max-w-sm shadow-2xl">
+                </div>
+                 <!-- Teks About -->
+                <div class="space-y-5">
+                    <p class="text-dark-text leading-relaxed">
+                        Saya adalah seorang mahasiswa aktif Teknik Informatika di Universitas Serang Raya yang saat ini juga menjabat sebagai Duta Kampus. Saya memiliki hasrat yang besar pada dunia teknologi, desain, inovasi, dan pengembangan diri.
+                    </p>
+                    <p class="text-dark-text leading-relaxed">
+                        Dengan kemampuan public speaking yang kuat, kemampuan beradaptasi, dan pola pikir pembelajar yang cepat, saya bercita-cita untuk memberikan kontribusi yang berarti bagi industri teknologi sambil terus mencari peluang untuk pengembangan profesional dan pribadi.
+                    </p>
+                    <!-- Skills -->
+                    <h3 class="text-2xl font-bold pt-4">Keahlian</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-dark-card p-3 rounded-lg">HTML/CSS</span>
+                        <span class="bg-dark-card p-3 rounded-lg">Java</span>
+                        <span class="bg-dark-card p-3 rounded-lg">PHP</span>
+                        <span class="bg-dark-card p-3 rounded-lg">Database</span>
+                        <span class="bg-dark-card p-3 rounded-lg">Figma</span>
+                        <span class="bg-dark-card p-3 rounded-lg">Canva</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experiences Section -->
+        <section id="experience" class="py-20">
+            <div class="text-center mb-12">
+                <p class="text-sm text-brand-red font-semibold">Portofolio Saya</p>
+                <h2 class="text-4xl font-bold">Pengalaman Organisasi</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Experience Card 1 -->
+                <div class="bg-dark-card rounded-xl overflow-hidden group shadow-lg p-6">
+                    <p class="text-sm text-brand-red font-semibold mb-2">Unsera Campus Ambassador</p>
+                    <h3 class="text-2xl font-bold mb-2">Koordinator Humas | Acara Amal</h3>
+                    <p class="text-dark-text mb-4">Bertanggung jawab menjangkau dan membangun kemitraan untuk mendukung acara baik secara finansial maupun eksposur media, menghasilkan 7 sponsor dan 4 mitra media. Saya juga memimpin tim yang terdiri dari 3 orang untuk menangani penjangkauan.</p>
+                </div>
+                <!-- Experience Card 2 -->
+                <div class="bg-dark-card rounded-xl overflow-hidden group shadow-lg p-6">
+                     <p class="text-sm text-brand-red font-semibold mb-2">Unsera Campus Ambassador</p>
+                    <h3 class="text-2xl font-bold mb-2">Koordinator Divisi Acara | Gathering</h3>
+                    <p class="text-dark-text mb-4">Merencanakan dan mengelola alur acara dengan membuat rundown, mengoordinasikan linimasa, dan memastikan setiap sesi berjalan lancar. Memimpin tim untuk mengatur permainan dan kegiatan ice-breaking untuk membangun koneksi antar peserta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="text-center mb-12">
+                <p class="text-sm text-brand-red font-semibold">Portofolio Saya</p>
+                <h2 class="text-4xl font-bold">Proyek yang Pernah Dibuat</h2>
+            </div>
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <img src="fuzzy-mockup.png" alt="Looka Food" style="width:110%; border-radius:8px;">
+            <h2></h2>
+            <h3>Web Based System Fuzzy Logic and Certainty Factor</h3>
+            <p>Web-based system using Fuzzy & CF methods for diagnosing heart disorders, designed to assist medical professionals in making more accurate decisions and diagnoses.</p>
+        </div>
+        <div class="card">
+            <img src="looka-food.png" alt="Looka Food" style="width:35%; border-radius:8px;">
+            <h3>Looka Food</h3>
+            <p>A mobile app UI designed in Figma for seamless and user-friendly food ordering.</p>
+            <a href="https://www.figma.com/proto/cK8nPnCjJGi4O1eTrJPXJn/Looka-Food?page-id=0%3A1&node-id=18-24&p=f&viewport=745%2C-39299%2C4.14&t=Akb3Rbyuzxh6popF-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&show-proto-sidebar=1"
+            target="_blank" class="download-btn">View Prototype</a>
+        </div>
+
+        <div class="card">
+            <img src="bengkel_mockup.png" alt="Looka Food" style="width:110%; border-radius:8px;">
+            <h2></h2>
+            <h3>Workshop Info System</h3>
+            <p>Manages workshop operations including mechanics, vehicle servicing, spare parts inventory, and financial transactions to ensure smooth and efficient workshop performance.</p>
+        </div>
+    </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-20 bg-dark-card">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <p class="text-sm text-brand-red font-semibold">Pencapaian Saya</p>
+                    <h2 class="text-4xl font-bold">Sertifikat & Lisensi</h2>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Certificate Card 1 -->
+                    <div onclick="openModal('AI sertifikat.png')" class="cursor-pointer bg-dark-bg p-6 rounded-xl flex items-center gap-4 hover:bg-brand-red/10 transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="AI sertifikat.png" alt="Logo Dicoding" class="w-16 h-16 rounded-lg flex-shrink-0 bg-white p-1">
+                        <div>
+                            <h3 class="text-xl font-bold">Fundamental of Artificial Intelligence</h3>
+                            <p class="text-dark-text">Dikeluarkan oleh: Dicoding Indonesia</p>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 2 -->
+                    <div onclick="openModal('Project Manajemen Sertifikat.png')" class="cursor-pointer bg-dark-bg p-6 rounded-xl flex items-center gap-4 hover:bg-brand-red/10 transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="Project Manajemen Sertifikat.png" alt="Logo Dicoding" class="w-16 h-16 rounded-lg flex-shrink-0 bg-white p-1">
+                        <div>
+                            <h3 class="text-xl font-bold">Fundamental of Project Management</h3>
+                            <p class="text-dark-text">Dikeluarkan oleh: Dicoding Indonesia</p>
+                        </div>
+                    </div>
+                    <!-- Certificate Card 3 -->
+                    <div onclick="openModal('Cyber Security Sertifikat.png')" class="cursor-pointer bg-dark-bg p-6 rounded-xl flex items-center gap-4 hover:bg-brand-red/10 transition-all duration-300 transform hover:-translate-y-1">
+                        <img src="Cyber Security Sertifikat.png" alt="Logo Dicoding" class="w-16 h-16 rounded-lg flex-shrink-0 bg-white p-1">
+                        <div>
+                            <h3 class="text-xl font-bold">Cyber Security</h3>
+                            <p class="text-dark-text">Dikeluarkan oleh: Surosowan Cyber</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                    <!-- Modal Sertifikat -->
+            <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+            <div class="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+                <button onclick="closeModal()" class="absolute top-2 right-2 text-black text-xl">&times;</button>
+                <img id="modalImage" src="" alt="Sertifikat" class="w-full rounded-lg">
+            </div>
+            </div>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-20 text-center bg-dark-card text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold">Mari bekerja sama di proyek<br/>Anda berikutnya</h2>
+            <p class="text-dark-text mt-4 mb-8 max-w-2xl mx-auto text-gray-300">
+            Hubungi saya
+            </p>
+
+            <!-- Form Kontak -->
+            <form action="https://formspree.io/f/mdkzrbna" method="POST" class="max-w-xl mx-auto space-y-4 text-left">
+            <input type="text" name="name" placeholder="Nama Anda" required
+                    class="w-full p-3 rounded-lg border border-gray-600 bg-gray-800 text-white" />
+            <input type="email" name="email" placeholder="Email Anda" required
+                    class="w-full p-3 rounded-lg border border-gray-600 bg-gray-800 text-white" />
+            <textarea name="message" rows="4" placeholder="Pesan Anda" required
+                        class="w-full p-3 rounded-lg border border-gray-600 bg-gray-800 text-white"></textarea>
+            <button type="submit"
+                    class="w-full bg-brand-red hover:bg-brand-red-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                Kirim Pesan
+            </button>
+            </form>
+
+            <!-- Tombol Alternatif -->
+            <div class="flex justify-center gap-4 mt-8 flex-wrap">
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20bekerja%20sama%20dengan%20Anda."
+                target="_blank"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2 justify-center">
+                <i class="fab fa-whatsapp text-xl"></i>
+                Hubungi via WhatsApp
+            </a>
+            </div>
+        </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+             <a href="#home" class="text-2xl font-bold text-brand-red uppercase mb-4 md:mb-0">Hafi</a>
+            <div class="flex space-x-6">
+                <!-- Ganti '#' dengan link media sosial Anda -->
+                <a href="https://linkedin.com/in/mohamadhafidimas" target="_blank" class="text-dark-text hover:text-brand-red transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript untuk menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.getElementsByTagName('a');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sembunyikan menu saat link di-klik (untuk navigasi di halaman yang sama)
+        for (let link of navLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
+    <script>
+  function openModal(imageSrc) {
+    document.getElementById('modalImage').src = imageSrc;
+    document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('modal').classList.add('flex');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+    document.getElementById('modal').classList.remove('flex');
+    document.getElementById('modalImage').src = '';
+  }
+</script>
+</body>
+</html>
